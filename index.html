@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Decodificador de Texto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body> 
+    <header class="cabecalho">
+        <p class="logo">a</p>
+    </header>
+
+    <div class="content">
+
+        <section class="principal">
+            <textarea id="area-de-texto1" class="area-de-texto-principal" placeholder="Digite seu texto"></textarea>
+            <p class="aviso">
+                ATENÇÃO: Somente letras minúsculas e sem acento!
+            </p>
+            <div class="botoes">
+                <button id="botao-criptografar" class="botao">Criptografar</button>
+                <button id="botao-descriptografar" class="botao">Descriptografar</button>
+            </div>
+        </section>
+        <section class="sessao-resultado">
+            <div class="texto-resultante">
+                <textarea id="area-de-texto2" class="textarea" placeholder="Nenhuma mensagem encontrada"
+                    readonly></textarea>
+            </div>
+            <button id="botao-copiar" class="botao">Copiar texto</button>
+        </section>
+    </div>
+    <footer class="rodape">
+        <div class="imagem-rodape">
+            <a href="https://github.com/Matheus-ant" target="_blank"><img src="./assets/github-logo.png"></a>
+            <a href="https://www.linkedin.com/in/matheus-antonio-dev/" target="_blank"><img
+                    src="./assets/linkedin-logo.png"></a>
+        </div>
+
+        <p>Desenvolvido por: Matheus Antonio &copy; 2022</p>
+        <p>Oracle Next Education T3 | Alura </p>
+
+
+    </footer>
+
+   <script>
+        var texto = document.querySelector('textarea');
+        var mostraTexto = document.querySelector('#area-de-texto2');
+        var fundoRecebeTexto = document.querySelector('.texto-resultante');
+
+        var botaoCriptografar = document.getElementById('botao-criptografar');
+        var botaoDescriptografar = document.getElementById('botao-descriptografar');
+        var botaoCopiar = document.getElementById('botao-copiar');
+
+        function tiraImagem() {
+            fundoRecebeTexto.style.background = '#0cca4b';
+        }
+
+        var input = document.querySelector("#area-de-texto1");
+        input.addEventListener("keypress", function (e) {
+            if (!checkChar(e)) {
+                e.preventDefault();
+                alert("ATENÇÃO: Somente letras minúsculas e sem acento!")
+            }
+        });
+        function checkChar(e) {
+            var char = String.fromCharCode(e.keyCode);
+
+            console.log(char);
+            var padrao = '[a-z ]';
+            if (char.match(padrao)) {
+                return true;
+            }
+        }
+
+        function criptografa() {
+            var criptografia = texto.value;
+            criptografia = criptografia.replace(/e/gi, 'enter');
+            criptografia = criptografia.replace(/i/gi, 'imes');
+            criptografia = criptografia.replace(/a/gi, 'ai');
+            criptografia = criptografia.replace(/o/gi, 'ober');
+            criptografia = criptografia.replace(/u/gi, 'ufat');
+
+            tiraImagem();
+            mostraTexto.innerText = criptografia;
+        }
+
+        function descriptografa() {
+            var descriptografia = texto.value;
+            descriptografia = descriptografia.replace(/enter/gi, 'e');
+            descriptografia = descriptografia.replace(/imes/gi, 'i');
+            descriptografia = descriptografia.replace(/ai/gi, 'a');
+            descriptografia = descriptografia.replace(/ober/gi, 'o');
+            descriptografia = descriptografia.replace(/ufat/gi, 'u');
+
+            tiraImagem();
+            mostraTexto.innerText = descriptografia;
+        }
+
+        function copiar() {
+            const copy = document.getElementById('area-de-texto2').select();
+            document.execCommand('copy');
+            alert("Mensagem Copiada!");
+        }
+        botaoCriptografar.onclick = criptografa;
+        botaoDescriptografar.onclick = descriptografa;
+        botaoCopiar.onclick = copiar;    
+    </script>
+</body>
+
+</html>
