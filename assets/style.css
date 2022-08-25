@@ -16,7 +16,7 @@ body {
 .logo {
     padding-left: 2%;
 
-    color: #0cca4b;
+    color: #196e11;
     font-size: 90px;
 
 }
@@ -42,7 +42,7 @@ body {
     padding: 20px 12px 0 20px;
     resize: none;
     background: transparent;
-    border: 1px solid rgb(12, 202, 75);
+    border: 1px solid #196e11;
     outline: none;
     color: #0A3871;
     font-size: 30px;
@@ -55,7 +55,7 @@ body {
     padding: 20px 0;
     width: 100%;
     font-size: 20px;
-    color: #0cca4b;
+    color: #196e11;
 }
 
 .botoes {
@@ -65,18 +65,18 @@ body {
 
 #botao-criptografar {
     color: #FFFFFF;
-    background-color: #0cca4b;
+    background-color: #196e11;
 }
 
 #botao-descriptografar {
-    color: #0cca4b;
+    color: #196e11;
     background-color: #ffffff;
-    border: 1px solid #0cca4b;
+    border: 1px solid #196e11;
 }
 
 #botao-copiar {
     color: #FFFFFF;
-    background-color: #0cca4b;
+    background-color: #196e11;
 }
 
 .botao {
@@ -90,24 +90,24 @@ body {
 .copiar:hover {
     cursor: pointer;
     background-color: #ffffff;
-    color: #0cca4b;
+    color: #196e11;
     transition: 0.4s;
-    border: 1px solid #0cca4b;
+    border: 1px solid #196e11;
 }
 
 #botao-descriptografar:hover {
     cursor: pointer;
-    background-color: #0cca4b;
+    background-color: #196e11;
     color: #ffffff;
     transition: 0.4s;
 }
 
 #botao-copiar:hover {
     cursor: pointer;
-    color: #0cca4b;
+    color: #196e11;
     background-color: #ffffff;
     transition: 0.4s;
-    border: 1px solid rgb(12, 202, 75);
+    border: 1px solid #196e11;
 }
 
 .sessao-resultado {
@@ -116,6 +116,7 @@ body {
     align-items: center;
     width: 40%;
     height: 500px;
+    
 
 }
 
@@ -123,7 +124,7 @@ body {
     height: 100%;
     width: 70%;
     margin-bottom: 10px;
-    background: #0cca4b url('detetive.png');
+    background: #196e11 url('detetive.png');
     background-size: 250px;
     background-repeat: no-repeat;
     background-position: center;
@@ -208,7 +209,7 @@ body {
         width: 90%;
         height: 100%;
         margin-top: 20px;
-        background: #0cca4b;
+        background: #196e11;
         border-radius: 30px;
     }
 
@@ -261,7 +262,7 @@ body {
 
     .texto-resultante {
         width: 100%;
-        background: #0cca4b;
+        background: #196e11;
 
         background-position: center;
     }
